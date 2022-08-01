@@ -31,3 +31,15 @@ Baixe o pacote
 4. Pronto só é acessar o link `http://localhost:3000/` para visualizar a aplicação rodando.
 5. Estou implementando a funcionalidade de criar um novo usuário para teste.
 
+
+## DEBUG - Erro na criação do BD
+Caso apresente erro na primeira execução, pode ser preciso criar o banco de dados manualmente.
+
+Para isto, proceder da seguinte forma:
+
+1. Execute o comando `docker ps -a` e copie o CONTAINER ID do mysql
+2. Em seguida, inicie o container com `docker start <ID do CONTAIER>`
+3. Acesse o contaier do mysql com `docker exec -it mysql bash`
+4. Entre no mysql `mysql -uroot -proot`
+5. Agora é só executar os comandos que estão listados no arquivo bd.sql na raiz do projeto.
+6. Finalmente, rodar novamente o projeto com `docker-compose up`
