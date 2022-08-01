@@ -1,8 +1,8 @@
 -- to create a new database
-CREATE DATABASE lucasdb;
+CREATE DATABASE salusdb;
 
 -- to use database
-use lucasdb;
+use salusdb;
 
 -- creating a new table
 CREATE TABLE users (

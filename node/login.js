@@ -7,24 +7,15 @@ const host = 'localhost';
 const port = 3000;
 
 const config = {
-    host: 'mysql',
+    host: 'db',
     user: 'root',
     password: 'root',
-    database:'lucasdb'
+    database:'salusdb'
 };
 
 const connection = mysql.createConnection(config);
 
-
-
-/* const connection = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'root',
-	password : 'root',
-	database : 'nodelogin'
-}); */
-
-// Caso a tabela não exista, cria uma tabela users com os campos especificados
+/* // Caso a tabela não exista, cria uma tabela users com os campos especificados
 let createUsers = `create table if not exists users(
 	id int not null auto_increment,
 	username varchar(128),
@@ -47,7 +38,7 @@ VALUES ('test', 'test')`;
 	if (err) {
 	  console.log(err.message);
 	}
-  });
+  }); */
 
 const app = express();
 
