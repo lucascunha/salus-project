@@ -5,7 +5,7 @@ CREATE IF NOT EXISTS DATABASE salusdb;
 use salusdb;
 
 -- creating a new table
-CREATE TABLE IF NOT EXISTS users (
+CREATE IF NOT EXISTS TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
   username VARCHAR(128) NOT NULL,
   password VARCHAR(128) NOT NULL,

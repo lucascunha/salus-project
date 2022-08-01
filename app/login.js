@@ -15,7 +15,7 @@ const config = {
 
 const connection = mysql.createConnection(config);
 
-/* // Caso a tabela não exista, cria uma tabela users com os campos especificados
+// Caso a tabela não exista, cria uma tabela users com os campos especificados
 let createUsers = `create table if not exists users(
 	id int not null auto_increment,
 	username varchar(128),
@@ -31,14 +31,14 @@ let createUsers = `create table if not exists users(
 
 
 // Criando um usuário de teste
-let InsertTest = `INSERT INTO users (username, password)
-VALUES ('test', 'test')`;
+let InsertTest = `INSERT INTO users (id, username, password)
+VALUES (1, 'test', 'test')`;
 
   connection.query(InsertTest, function(err, results, fields) {
 	if (err) {
 	  console.log(err.message);
 	}
-  }); */
+  });
 
 const app = express();
 

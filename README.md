@@ -15,11 +15,10 @@ Este projeto está sendo desenvolvido como entrega para o Bootcamp FullStack Dev
 ## Requisitos
 - É necessário ter instalado os seguintes modulos:
 
-  * Docker - vesão 19+
-  * Docker-compose - versão 1.26 - guia de instalação https://docs.docker.com/compose/install/
+  * Docker
+  * Docker-compose
   * npm
-  * npx
-  * git(opcional)
+  * git
 
 ## Instalação e execução
 Baixe o pacote 
@@ -32,14 +31,11 @@ Baixe o pacote
 5. Estou implementando a funcionalidade de criar um novo usuário para teste.
 
 
-## DEBUG - Erro na criação do BD
-Caso apresente erro na primeira execução, pode ser preciso criar o banco de dados manualmente.
+## DEBUG - Acessando containers individualmente
+Caso deseje acessar diretamente o container do Banco de Dados, proceder da seguinte forma:
 
-Para isto, proceder da seguinte forma:
-
-1. Execute o comando `docker ps -a` e copie o CONTAINER ID do mysql
-2. Em seguida, inicie o container com `docker start <ID do CONTAIER>`
-3. Acesse o contaier do mysql com `docker exec -it mysql bash`
-4. Entre no mysql `mysql -uroot -proot`
-5. Agora é só executar os comandos que estão listados no arquivo bd.sql na raiz do projeto.
-6. Finalmente, rodar novamente o projeto com `docker-compose up`
+1. Execute o comando `docker ps -a` e copie o CONTAINER ID do mysql;
+2. Em seguida, inicie o container com `docker start <ID do CONTAIER>`;
+3. Acesse o container do mysql com `docker exec -it mysql bash`;
+4. Dentro do container, digite `mysql -uroot -proot` para acessar o BD;
+5. Uma vez dentro do mysql, vc consegue fazer todo o gerenciamento do banco de dados.

@@ -1,10 +1,14 @@
 FROM node:15
 
-WORKDIR /usr/src/app/
+WORKDIR /usr/src
 
 COPY package*.json ./
 
 RUN npm init --y && npm install express --save && npm i --S express pug && npm install mysql2 && npm install --save sequelize && npm install mysql2-promise --save
+
+ENV PATH=/usr/src/node_modules/.bin:$PATH
+
+WORKDIR /usr/src/app/
 
 COPY . .
 
@@ -14,5 +18,3 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 EXPOSE 3000
-
-#CMD [ "node", "./node/index.js" ]

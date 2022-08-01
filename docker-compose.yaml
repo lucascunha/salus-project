@@ -4,15 +4,15 @@ services:
 
   app:
     build: 
-      context: node
+      context: app
     container_name: app
     entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
     command: node ./login.js
     networks:
-      - mysql-network
+      - salus-network
     volumes:
-      - ./node:/usr/src/app
-      #- exclude:/usr/src/app/node_modules/
+      - ./app:/usr/src/app
+      - exclude:/usr/src/app/node_modules/
     tty: true
     ports:
       - "3000:3000"
@@ -22,7 +22,6 @@ services:
   db:
     build: 
       context: db
-    #image: mysql:5.7
     command: --innodb-use-native-aio=0
     container_name: mysql
     restart: always
@@ -36,10 +35,10 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - mysql-network
+      - salus-network
 
 networks:
-  mysql-network:
+  salus-network:
     driver: bridge
 
 volumes:
