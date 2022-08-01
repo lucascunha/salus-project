@@ -1,11 +1,11 @@
 -- to create a new database
-CREATE DATABASE salusdb;
+CREATE IF NOT EXISTS DATABASE salusdb;
 
 -- to use database
 use salusdb;
 
 -- creating a new table
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
   id INT NOT NULL AUTO_INCREMENT,
   username VARCHAR(128) NOT NULL,
   password VARCHAR(128) NOT NULL,
