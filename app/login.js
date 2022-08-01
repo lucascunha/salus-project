@@ -54,7 +54,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 // http://localhost:3000/
 app.get('/', function(request, response) {
 	// Renderiza o template do login
-	response.sendFile(path.join(__dirname + '/login.html'));
+	response.sendFile(path.join(__dirname + '/view/login.html'));
 });
 
 // http://localhost:3000/auth
